@@ -1,0 +1,148 @@
+@import "./base.scss";
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  // color-scheme: light dark;
+  // color: rgba(255, 255, 255, 0.87);
+  // background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --color-bg-primary: #343541;
+  --color-bg-secondary: #202123;
+  --text-primary: #ffffff;
+
+  // --gradient-primary: linear-gradient(90deg, #a29bd4, #989fdd);
+  // --color-primary: #19c37d;
+  // --color-secondary: #715fde;
+  // --color-error: #ef4146;
+  // --text-primary: #202123;
+  //
+  // --text-default: #353740;
+  // --text-secondary: #6e6e80;
+  // --text-disabled: #acacbe;
+  // --text-error: var(--color-error);
+}
+
+body {
+  margin: 0;
+  // display: flex;
+  // place-items: center;
+  // min-width: 320px;
+  // min-height: 100vh;
+}
+
+/*@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+*/
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  color: var(--text-primary);
+}
+// sidenav
+.sidenav {
+  background-color: var(--color-bg-secondary);
+  padding: 10px;
+}
+.side-nav-btn {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  span {
+    padding: 0 12px 0 6px;
+  }
+}
+
+// chat box
+.chatbox {
+  background-color: var(--color-bg-primary);
+  position: relative;
+  padding: 24px 0;
+}
+.chat-input-box {
+  padding: 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  textarea {
+    background-color: #40414f;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 12px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    resize: none;
+  }
+}
+
+.chat-log {
+  // background-color: #40414f;
+
+  .chat-message {
+    padding: 12px;
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .avatar {
+      background: #fff;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+    .message {
+      padding: 0 40px;
+    }
+  }
+}
+
+.chat-gpt-log {
+  background-color: #40414f;
+
+  .chat-gpt-message {
+    padding: 12px;
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .gpt-avatar {
+      background: green;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+    .gpt-message {
+      padding: 0 40px;
+    }
+  }
+}
