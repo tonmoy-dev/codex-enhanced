@@ -32,6 +32,10 @@
   // --text-error: var(--color-error);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   // display: flex;
@@ -82,26 +86,38 @@ main {
 // chat box
 .chatbox {
   background-color: var(--color-bg-primary);
+  // overflow-x: hidden;
   position: relative;
-  padding: 24px 0;
+  .chatlogs {
+    padding: 20px 0 100px 0;
+  }
 }
 .chat-input-box {
   padding: 24px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 100%;
 
-  textarea {
-    background-color: #40414f;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    padding: 12px;
-    color: var(--text-primary);
-    font-size: 1rem;
-    outline: none;
-    resize: none;
+  form {
+    display: flex;
+    position: relative;
+
+    input {
+      background-color: #40414f;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      padding: 12px;
+      color: var(--text-primary);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      background-color: #000;
+      color: #fff;
+    }
   }
 }
 
@@ -122,27 +138,10 @@ main {
     }
     .message {
       padding: 0 40px;
+      font-size: 14px;
     }
   }
-}
-
-.chat-gpt-log {
-  background-color: #40414f;
-
-  .chat-gpt-message {
-    padding: 12px;
-    display: flex;
-    max-width: 800px;
-    margin: 0 auto;
-
-    .gpt-avatar {
-      background: green;
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-    }
-    .gpt-message {
-      padding: 0 40px;
-    }
+  .chat-message.chatgpt {
+    background-color: #40414f;
   }
 }
