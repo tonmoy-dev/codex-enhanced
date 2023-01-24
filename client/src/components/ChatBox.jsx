@@ -10,7 +10,9 @@ function ChatBox() {
   const textareaRef = useRef(null);
   const { appChatlog, setAppChatlog } = useStore();
 
-  const apiURL = import.meta.env.VITE_SERVER_URL;
+  const apiURL = import.meta.env.VITE_SERVER_URL
+    ? import.meta.env.VITE_SERVER_URL
+    : "https://codex-enhanced.onrender.com";
 
   async function handleSubmit(e) {
     e.preventDefault();
