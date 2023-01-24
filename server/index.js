@@ -1,7 +1,8 @@
 const express = require("express");
-const { Configuration, OpenAIApi } = require("openai");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+require("dotenv").config();
+const { Configuration, OpenAIApi } = require("openai");
 
 const app = express();
 const port = 5000;
@@ -37,15 +38,4 @@ app.post("/", async (req, res) => {
   });
 });
 
-// async function callapi() {
-//   const response = await openai.createCompletion({
-//     model: "text-davinci-003",
-//     prompt: "Say this is a test",
-//     max_tokens: 7,
-//     temperature: 0,
-//   });
-//   console.log(response.data);
-// }
-//
-// callapi();
 app.listen(port, () => console.log(`Running on port http://localhost:${port}`));
