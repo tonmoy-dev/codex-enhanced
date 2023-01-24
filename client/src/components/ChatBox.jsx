@@ -10,6 +10,8 @@ function ChatBox() {
   const textareaRef = useRef(null);
   const { appChatlog, setAppChatlog } = useStore();
 
+  const apiURL = import.meta.env.VITE_SERVER_URL;
+
   async function handleSubmit(e) {
     e.preventDefault();
     if (textareaRef.current.value.length <= 0) return;
@@ -26,7 +28,7 @@ function ChatBox() {
     };
 
     await axios
-      .post("http://localhost:5000/", userMessage)
+      .post(`${apiURL}`, userMessage)
       .then((response) => {
         setLog(response.data.text);
         textareaRef.current.value = "";
