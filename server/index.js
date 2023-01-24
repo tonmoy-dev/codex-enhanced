@@ -12,8 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 const configuration = new Configuration({
   organization: "org-Kyp1K4M7gFo1hURgy6cPLMR0",
-  // apiKey: process.env.OPENAI_API_KEY,
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
